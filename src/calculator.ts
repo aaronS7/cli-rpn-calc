@@ -1,3 +1,4 @@
+import { DivideByZeroError } from './errors';
 import { type Operator } from './parse';
 
 type ICalculatorOperators = {
@@ -39,7 +40,7 @@ export class RpnCalculator implements ICalculatorOperators {
 
   div(operand1: number, operand2: number): number {
     if (operand2 === 0) {
-      throw new Error(`Cannot divide ${operand1} by 0. Discarding input`);
+      throw new DivideByZeroError(operand1);
     }
     return operand2 / operand1;
   }

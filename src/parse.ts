@@ -1,3 +1,5 @@
+import { ImproperFormatForNumberError, InvalidOperatorError } from "./errors";
+
 export type Operator = '+' | '-' | '*' | '/';
 
 type ParsedInput = {
@@ -5,20 +7,21 @@ type ParsedInput = {
   parsedOperators: Operator[];
 };
 
+const VALID_OPERATORS = new Set(['+', '-', '*', '/']);
+
 export function parseInput(input: string): ParsedInput {
   const parsedOperands: number[] = [];
   const parsedOperators: Operator[] = [];
   const operandsAndOperators = input.split(' ');
-  const validOperator = new Set(['+', '-', '*', '/']);
 
   let idx: number = 0;
   for (idx = 0; idx < operandsAndOperators.length; idx++) {
-    if (validOperator.has(operandsAndOperators[idx])) {
+    if (VALID_OPERATORS.has(operandsAndOperators[idx])) {
       break;
     }
     const value = Number(operandsAndOperators[idx]);
     if (isNaN(value)) {
-      throw new Error('Number is not in proper format. Discarding input');
+      throw new ImproperFormatForNumberError();
     }
     parsedOperands.push(value);
   }
@@ -26,8 +29,8 @@ export function parseInput(input: string): ParsedInput {
   for (; idx < operandsAndOperators.length; idx++) {
     const operator = operandsAndOperators[idx];
 
-    if (!validOperator.has(operator)) {
-      throw new Error(`Invalid operator of "${operator}". Discarding input`);
+    if (!VALID_OPERATORS.has(operator)) {
+      throw new InvalidOperatorError(operator);
     }
 
     parsedOperators.push(operator as Operator);

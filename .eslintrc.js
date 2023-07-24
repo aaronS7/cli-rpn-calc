@@ -25,6 +25,7 @@ module.exports = {
     "plugins": ["prettier"],
     "rules": {
         "prettier/prettier": "error",
-        "@typescript-eslint/consistent-type-definitions": ["error", "type"]
+        "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+        "prefer-const": false 
     }
 }
