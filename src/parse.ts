@@ -1,11 +1,13 @@
+export type Operator = '+' | '-' | '*' | '/';
+
 type ParsedInput = {
   parsedOperands: number[];
-  parsedOperators: string[];
+  parsedOperators: Operator[];
 };
 
 export function parseInput(input: string): ParsedInput {
   const parsedOperands: number[] = [];
-  const parsedOperators: string[] = [];
+  const parsedOperators: Operator[] = [];
   const operandsAndOperators = input.split(' ');
   const validOperator = new Set(['+', '-', '*', '/']);
 
@@ -25,10 +27,10 @@ export function parseInput(input: string): ParsedInput {
     const operator = operandsAndOperators[idx];
 
     if (!validOperator.has(operator)) {
-      throw new Error('Invalid operator. Discarding input');
+      throw new Error(`Invalid operator of "${operator}". Discarding input`);
     }
 
-    parsedOperators.push(operator);
+    parsedOperators.push(operator as Operator);
   }
 
   return {
