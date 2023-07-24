@@ -1,4 +1,4 @@
-import { ImproperFormatForNumberError, InvalidOperatorError } from './errors';
+import { ImproperFormatForNumberError, InvalidOperatorError, MissingInputError } from "./errors";
 
 export type Operator = '+' | '-' | '*' | '/';
 
@@ -12,6 +12,11 @@ const VALID_OPERATORS = new Set(['+', '-', '*', '/']);
 export function parseInput(input: string): ParsedInput {
   const parsedOperands: number[] = [];
   const parsedOperators: Operator[] = [];
+
+  if (input === '') {
+    throw new MissingInputError();
+  }
+
   const operandsAndOperators = input.split(' ');
 
   let idx: number = 0;

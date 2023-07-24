@@ -39,3 +39,13 @@ export class ImproperFormatForNumberError extends Error {
     this.name = 'ImproperFormatForNumberError';
   }
 }
+
+/**
+ * Error when no data was inputted
+ */
+export class MissingInputError extends Error {
+  constructor() {
+    super('Did not detect any input. Please try again');
+    this.name = 'MissingInputError';
+  }
+}
