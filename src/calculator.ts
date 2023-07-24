@@ -8,6 +8,9 @@ type ICalculatorOperators = {
   div: (operand1: number, operand2: number) => number;
 };
 
+/**
+ * Class to handle computations for various operations.
+ */
 export class RpnCalculator implements ICalculatorOperators {
   computeOperation(
     operand1: number,

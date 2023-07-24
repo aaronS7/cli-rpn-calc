@@ -1,6 +1,4 @@
-import { parseInput, type Operator } from './parse';
-import { RpnCalculator } from './calculator';
-import { InsufficientOperandsError } from './errors';
+import { type Operator } from './parse';
 import { computeOperations } from './computeOperations';
 
 function main(): void {
@@ -13,7 +11,11 @@ function main(): void {
       process.exit(0);
     }
 
-    const { message, operands: newOperands, operators: newOperators } = computeOperations(operators, operands, input);
+    const {
+      message,
+      operands: newOperands,
+      operators: newOperators,
+    } = computeOperations(operators, operands, input);
     operators = newOperators;
     operands = newOperands;
 

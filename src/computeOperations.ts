@@ -6,9 +6,19 @@ type ComputedResult = {
   message: string;
   operators: Operator[];
   operands: number[];
-}
+};
 
 const calculator = new RpnCalculator();
+
+/**
+ * This function is used to compute the new operators and operands after receiving some user input.
+ * This will also handle discarding the input and keeping the state of the operators and operands
+ * if the user input is malformed
+ * @param operators The operators that exist before input
+ * @param operands The operands that exists before the input
+ * @param input The input that will be parsed
+ * @returns The message to return to the console as well as the new operators and operands after the computations
+ */
 export function computeOperations(
   operators: Operator[],
   operands: number[],

@@ -1,4 +1,4 @@
-import { ImproperFormatForNumberError, InvalidOperatorError } from "./errors";
+import { ImproperFormatForNumberError, InvalidOperatorError } from './errors';
 
 export type Operator = '+' | '-' | '*' | '/';
 
