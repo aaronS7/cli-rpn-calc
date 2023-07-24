@@ -25,3 +25,11 @@ However, if we had large inputs, utilizing a queue would result in an O(1) when 
 ## Running code
 Install the latest lts verison of node and run (assumes linux shell): `npm ci && npm run build && npm start`.
 This will install all necessary dependencies, build the project, and run the project.
+If you prefer to use docker, you can run the following in the root of the project:
+```
+docker build -t rpn-cli .
+docker run -it rpn-cli
+```
+To execute test, you can run
+`npm run test`.
+

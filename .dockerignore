@@ -1,0 +1,12 @@
+.git/
+.gitignore
+dist/
+coverage/
+node_modules/
+.eslintrc.js
+.prettierrc.js
+Dockerfile
+.dockerignore
+jest.config.js
+*.md
+tsconfig.eslint.json
