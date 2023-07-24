@@ -1,0 +1,38 @@
+{
+  "name": "cli-rpn-calc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "npx rimraf dist",
+    "lint": "npx eslint src/** --fix",
+    "dev": "tsc-watch --onSuccess \"node ./dist\"",
+    "start": "node ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronS7/cli-rpn-calc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaronS7/cli-rpn-calc/issues"
+  },
+  "homepage": "https://github.com/aaronS7/cli-rpn-calc#readme",
+  "devDependencies": {
+    "@types/node": "^20.4.4",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-standard-with-typescript": "^37.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^16.0.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "prettier": "3.0.0",
+    "tsc-watch": "^6.0.4",
+    "typescript": "^5.1.6"
+  }
+}
